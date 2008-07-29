@@ -3,9 +3,8 @@ require 'json'
 require 'net/http'
 require 'uri'
 
-require 'provider/flickr'
-require 'provider/vimeo'
-require 'provider/viddler'
+files = File.join(File.dirname(__FILE__), 'providers', '*.rb')
+Dir.glob(files).each {|file| require file}
 
 module Oembed
   
