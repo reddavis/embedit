@@ -1,0 +1,13 @@
+flickr: http://www.flickr.com/services/oembed
+  
+vimeo: http://www.vimeo.com/api/oembed.{format}
+
+viddler: http://lab.viddler.com/services/oembed/
+
+qik: http://qik.com/api/oembed.{format}
+
+pownce: http://api.pownce.com/2.1/oembed.{format}
+
+revision3: http://revision3.com/api/oembed/
+
+# hulu: http://www.hulu.com/api/oembed.{format} - No UK service

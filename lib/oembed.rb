@@ -2,25 +2,22 @@ require 'rubygems'
 require 'json'
 require 'net/http'
 require 'uri'
+require 'yaml'
 
-files = File.join(File.dirname(__FILE__), 'providers', '*.rb')
-Dir.glob(files).each {|file| require file}
+#problems with loading
+#files = File.join(File.dirname(__FILE__), 'oembed', '*.rb')
+#Dir.glob(files).each {|file| require file}
 
-module Oembed
-  
-end
+require 'oembed/providers'
+require 'oembed/media'
 
-a = Oembed::Flickr.new("http://www.flickr.com/photos/erkan/428665273/")
-puts a.title
-puts a.type
-puts a.provider
-puts a.url
 
-b = Oembed::Vimeo.new("http://www.vimeo.com/1263214")
-puts b.title
-puts b.html
+puts a = Oembed::Media.new('http://www.vimeo.com/1263763').title
 
-c = Oembed::Viddler.new("http://www.viddler.com/explore/cdevroe/videos/424/")
-puts c.title
-puts c.html
-puts c.url
+puts b = Oembed::Media.new('http://www.flickr.com/photos/davidgutierrez/2135724493/').title
+
+puts c = Oembed::Media.new('http://www.viddler.com/explore/winelibrarytv/videos/142/').title
+
+puts d = Oembed::Media.new('http://qik.com/video/141977').title
+
+puts e = Oembed::Media.new('http://pownce.com/dburka/notes/2951118/').title

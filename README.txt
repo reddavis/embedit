@@ -1,1 +1,1 @@
-oEmbed!
+This is/will (be) a very simple oEmbed wrapper in Ruby and will be accompanied by a Rails plugin. 
