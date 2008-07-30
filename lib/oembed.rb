@@ -21,3 +21,5 @@ puts c = Oembed::Media.new('http://www.viddler.com/explore/winelibrarytv/videos/
 puts d = Oembed::Media.new('http://qik.com/video/141977').title
 
 puts e = Oembed::Media.new('http://pownce.com/dburka/notes/2951118/').title
+
+puts f = Oembed::Media.new('http://revision3.com/trs/blockoland/').html
