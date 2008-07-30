@@ -1,6 +1,6 @@
 module Oembed
   
-  class Media
+  class Media < Providers
     
     attr_accessor :title, :media_url, :html, :format
         
@@ -28,7 +28,7 @@ module Oembed
     
         
     private
-    
+    #find Oembed provider - set in ../providers.yaml
     def find_provider
       @sites.keys.each do |key|
         if @url.match(/#{key}/)
@@ -36,7 +36,7 @@ module Oembed
         end
       end
     end
-    
+    #some urls contain format in the middle of the url
     def prepare_url(url)
       if url.match(/format/)
         @base_url = "#{url.gsub(/\{format\}/, @format)}" + '?url='

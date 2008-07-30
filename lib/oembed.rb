@@ -4,10 +4,7 @@ require 'net/http'
 require 'uri'
 require 'yaml'
 
-#problems with loading
-#files = File.join(File.dirname(__FILE__), 'oembed', '*.rb')
-#Dir.glob(files).each {|file| require file}
-
+#Files
 require 'oembed/providers'
 require 'oembed/media'
 
