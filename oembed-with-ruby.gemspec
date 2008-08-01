@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "oembed-with-ruby"
-  s.version = '0.0.1'
+  s.version = '0.0.2'
   s.date = Time.now.to_s
   s.summary = "Ruby interface for oEmbed"
   s.email = "reddavis@gmail.com"
