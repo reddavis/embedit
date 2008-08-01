@@ -7,5 +7,5 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/reddavis/oembed-with-ruby/"
   s.has_rdoc = false
   s.authors = ["Red Davis"]
-  s.files = ["README", "lib/oembed.rb", "lib/providers.yaml", "lib/oembed/media.rb", "lib/oembed/providers.rb"]
+  s.files = ["README", "lib/oembed-with-ruby.rb", "lib/providers.yaml", "lib/oembed/media.rb", "lib/oembed/providers.rb"]
 end
