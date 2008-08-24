@@ -23,7 +23,7 @@ module Oembed
       @title = parsed_data['title']
       @media_url = parsed_data['url']
       @format = parsed_data['type']
-      @html = parsed_data['html'] if @format == 'video'
+      @html = @format == 'video' ? parsed_data['html'] : %{<img src='#{@media_url}' alt='#{@title}'>}
     end
     
         
@@ -31,8 +31,10 @@ module Oembed
     #find Oembed provider - set in ../providers.yaml
     def find_provider
       @sites.keys.each do |key|
-        if @url.match(/#{key}/)
+        unless @url.match(/#{key}/).nil?
           @base_url = prepare_url(@sites[key])
+        else
+          check_for_other_service
         end
       end
     end
@@ -43,6 +45,12 @@ module Oembed
       else
         @url = @url + '&format=json'
         @base_url = url + '?url='
+      end
+    end
+    
+    def check_for_other_service
+      if @url.match(/youtube/)
+        Oembed::YouTube.new(@url)
       end
     end
     
