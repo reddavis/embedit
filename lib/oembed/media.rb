@@ -4,23 +4,26 @@ module Oembed
     
     attr_accessor :title, :media_url, :format, :html
         
-    def initialize(url, options = {})
+    def initialize(url)
       @format = 'json'
       @url = url
       @sites = Oembed::Providers.new.sites 
-      get_info(options)
+      get_info
     end
     
     def html(size = {})
       if @format == 'photo'
         @html.insert(-2, " height=#{size[:height]} ") unless size[:height].nil?
         @html.insert(-2, " width=#{size[:width]}") unless size[:width].nil?
+      else
+        @html.gsub!(/height="\d+"/, %{height="#{size[:height].to_s}"}) unless size[:height].nil?
+        @html.gsub!(/width="\d+"/, %{width="#{size[:width].to_s}"}) unless size[:width].nil?
       end
       @html
     end
-              
+      #width="504" height="380"        
     private    
-    def get_info(options = {})
+    def get_info
       find_provider
       url = URI.parse(@base_url + @url)
       http_get = Net::HTTP.get(url)
