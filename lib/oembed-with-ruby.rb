@@ -9,11 +9,11 @@ require 'oembed/providers'
 require 'oembed/media'
 
 
-#puts a = Oembed::Media.new('http://www.vimeo.com/1263763').title
+#puts a = Oembed::Media.new('http://www.vimeo.com/1263763', :width => 200).html
 
-#puts b = Oembed::Media.new('http://www.flickr.com/photos/davidgutierrez/2135724493/').html
+puts b = Oembed::Media.new('http://www.flickr.com/photos/davidgutierrez/2135724493/').html(:height => 200)
 
-#puts c = Oembed::Media.new('http://www.viddler.com/explore/winelibrarytv/videos/142/').title
+#puts c = Oembed::Media.new('http://www.viddler.com/explore/winelibrarytv/videos/142/').html
 
 #puts d = Oembed::Media.new('http://qik.com/video/141977').title
 

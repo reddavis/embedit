@@ -2,16 +2,25 @@ module Oembed
   
   class Media < Providers
     
-    attr_accessor :title, :media_url, :html, :format
+    attr_accessor :title, :media_url, :format, :html
         
-    def initialize(url)
+    def initialize(url, options = {})
       @format = 'json'
       @url = url
       @sites = Oembed::Providers.new.sites 
-      get_info
+      get_info(options)
     end
     
-    def get_info
+    def html(size = {})
+      if @format == 'photo'
+        @html.insert(-2, " height=#{size[:height]} ") unless size[:height].nil?
+        @html.insert(-2, " width=#{size[:width]}") unless size[:width].nil?
+      end
+      @html
+    end
+              
+    private    
+    def get_info(options = {})
       find_provider
       url = URI.parse(@base_url + @url)
       http_get = Net::HTTP.get(url)
@@ -25,9 +34,7 @@ module Oembed
       @format = parsed_data['type']
       @html = @format == 'video' ? parsed_data['html'] : %{<img src='#{@media_url}' alt='#{@title}'>}
     end
-    
         
-    private
     #find Oembed provider - set in ../providers.yaml
     def find_provider
       @sites.keys.each do |key|
