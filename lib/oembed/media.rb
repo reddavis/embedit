@@ -44,7 +44,8 @@ module Oembed
         unless @url.match(/#{key}/).nil?
           @base_url = prepare_url(@sites[key])
         else
-          check_for_other_service
+          raise TypeError, "URL was not an Oembed provider"
+          #check_for_other_service
         end
       end
     end
@@ -59,9 +60,10 @@ module Oembed
     end
     
     def check_for_other_service
-      if @url.match(/youtube/)
-        Oembed::YouTube.new(@url)
-      end
+      
+      #if @url.match(/youtube/)
+        #Oembed::YouTube.new(@url)
+      #end
     end
     
   end
