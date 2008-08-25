@@ -6,11 +6,17 @@ a = Oembed::Media('put the url here')
 
 You are then given attributes such as...
 
-a.title
-a.media_url - link to the media
-a.html - a flash player, (only for videos)
-a.format - video/photo
+	a.title
 
+	a.media_url - link to the media
+
+	a.html - a flash player for videos and a <img> tag for pictures
+		html allows you to specify a height and/or width...
+		a.html(:width => 200, :height => 1000)
+	
+	a.format - video/photo
+
+========================================================================================================================
 
 Services Supported
 
