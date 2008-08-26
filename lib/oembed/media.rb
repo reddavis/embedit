@@ -36,17 +36,10 @@ module Embedit
         end
       end
       if @url.match(/youtube/)
-        @media_data = Oembed::YouTube.new(@url)
+        @media_data = YouTube.new(@url)
         return
       end
-        
-      end
     end
 
-
-    def check_for_other_service
-      
-    end
-    
   end
 end
