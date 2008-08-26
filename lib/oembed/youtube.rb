@@ -9,10 +9,30 @@ module Embedit
       get_info
     end
     
+    def html(size = {})
+      
+    end
+    
+    def html=(video_id)
+      @html = %{
+        <object width="425" height="350">
+          <param name="movie" value="http://www.youtube.com/v/#{video_id}"></param>
+          <param name="wmode" value="transparent"></param>
+          <embed src="http://www.youtube.com/v/#{video_id}" 
+            type="application/x-shockwave-flash" wmode="transparent" 
+            width="425" height="350">
+          </embed>
+        </object>
+      }
+    end
+    
     private
     
     def get_info
-      video_id = extract_url(@input_url)
+      video_id = extract_id(@input_url)
+      data = REXML::Document.new(open("http://gdata.youtube.com/feeds/videos/#{video_id}"))
+      @title = REXML::XPath.first(data, "//title").text
+      puts @html = video_id
     end
     
     def extract_id(url)
@@ -22,5 +42,3 @@ module Embedit
   end
 
 end
-
-puts Embedit::YouTube.new("http://www.youtube.com/watch?v=j3TOT1lnVTA")

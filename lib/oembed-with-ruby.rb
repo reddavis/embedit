@@ -1,7 +1,8 @@
 require 'rubygems'
 require 'json'
+require 'rexml/document'
 require 'net/http'
-require 'uri'
+require 'open-uri'
 require 'yaml'
 
 #Files
@@ -11,9 +12,9 @@ require 'oembed/oembed'
 require 'oembed/youtube'
 
 
-puts a = Embedit::Media.new('http://www.vimeo.com/1263763').url
+#puts a = Embedit::Media.new('http://www.vimeo.com/1263763').url
 
-puts b = Embedit::Media.new('http://www.flickr.com/photos/davidgutierrez/2135724493/').html(:height => 200)
+#puts b = Embedit::Media.new('http://www.flickr.com/photos/davidgutierrez/2135724493/').html(:height => 200)
 
 #puts c = Oembed::Media.new('http://www.viddler.com/explore/winelibrarytv/videos/142/').html(:height => 200, :width => 500)
 
@@ -26,3 +27,5 @@ puts b = Embedit::Media.new('http://www.flickr.com/photos/davidgutierrez/2135724
 #YouTUBE
 
 #puts g = Oembed::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA")
+
+puts Embedit::YouTube.new("http://www.youtube.com/watch?v=j3TOT1lnVTA")
