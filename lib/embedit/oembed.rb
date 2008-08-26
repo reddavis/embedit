@@ -5,7 +5,6 @@ module Embedit
     attr_reader :title, :url, :format, :html
     
     def initialize(url)
-      @format = 'json'
       @input_url = url
       @sites = Providers.new.sites 
       get_info
@@ -51,7 +50,7 @@ module Embedit
     #some urls contain format in the middle of the url
     def prepare_url(url)
       if url.match(/format/)
-        @base_url = "#{url.gsub(/\{format\}/, @format)}" + '?url='
+        @base_url = "#{url.gsub(/\{format\}/, 'json')}" + '?url='
       else
         @input_url = @input_url + '&format=json'
         @base_url = url + '?url='

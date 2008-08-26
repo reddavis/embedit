@@ -5,7 +5,8 @@ module Embedit
     attr_reader :title, :url, :format
   
     def initialize(url)
-      @input_url = url
+      @format = 'video'
+      @url = url
       get_info
     end
     
@@ -31,7 +32,7 @@ module Embedit
     private
     
     def get_info
-      video_id = extract_id(@input_url)
+      video_id = extract_id(@url)
       data = REXML::Document.new(open("http://gdata.youtube.com/feeds/videos/#{video_id}"))
       @title = REXML::XPath.first(data, "//title").text
       self.html = video_id

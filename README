@@ -1,35 +1,22 @@
-This is/will (be) a very simple oEmbed wrapper in Ruby and will be accompanied by a Rails plugin.
+Embedit
+-------
 
-To Use
+Embedit is an embedding tool written in Ruby.
 
-a = Oembed::Media('put the url here')
+We are currently re-writing dothegreenthing.com and allow users to add media from pretty much anywhere. Handling all the different embed codes/api's validations and everything else that comes with this functionality can be/is a pain.
 
-You are then given attributes such as...
+Embedit is extremely simple to use. You have the url? Just plonk it in here =>
 
-	a.title
+media = Embedit::Media.new('here')
 
-	a.media_url - link to the media
+Thats it!
 
-	a.html - a flash player for videos and a <img> tag for pictures
-		html allows you to specify a height and/or width...
-		a.html(:width => 200, :height => 1000)
+At the time of writing, you now have the ability to call:
+	media.title => Shows the title of whatever was uploaded
+	media.format => The format of the file
+	media.url => The url to the media
+	media.html => The embed code, whether this is a generic flash player, a company player (Vimeo, Youtube), image tag and more to come
 	
-	a.format - video/photo
-
-========================================================================================================================
-
-Services Supported
-
-Flickr
-  
-Vimeo
-
-Viddler
-
-Qik
-
-Pownce
-
-Revision3
-
-Hulu - You may get problems if the server your using it on is not in the US
+You also specify media sizes => media.html(:width => 200, :height => 700)
+	
+At the moment Embedit supports the oEmbed family (http://www.oembed.com/) and YouTube.

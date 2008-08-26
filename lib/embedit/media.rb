@@ -31,13 +31,11 @@ module Embedit
     def find_provider(url)
       @oembed_providers.keys.each do |key|      #First search oembed providers for a match
         if url.match(/#{key}/)
-          @media_data = Oembed.new(url)
-          return
+          return @media_data = Oembed.new(url)
         end
       end
-      if @url.match(/youtube/)
-        @media_data = YouTube.new(@url)
-        return
+      if url.match(/youtube/)                  #Next up is YouTube
+        return @media_data = YouTube.new(url)
       end
     end
 
