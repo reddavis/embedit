@@ -28,4 +28,4 @@ require 'oembed/youtube'
 
 #puts g = Oembed::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA")
 
-puts Embedit::YouTube.new("http://www.youtube.com/watch?v=j3TOT1lnVTA")
+puts Embedit::YouTube.new("http://www.youtube.com/watch?v=j3TOT1lnVTA").html

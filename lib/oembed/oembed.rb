@@ -2,7 +2,7 @@ module Embedit
   
   class Oembed
     
-    attr_accessor :title, :url, :format, :html
+    attr_reader :title, :url, :format, :html
     
     def initialize(url)
       @format = 'json'
