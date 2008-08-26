@@ -8,5 +8,5 @@ Gem::Specification.new do |s|
   s.has_rdoc = false
   s.authors = ["Red Davis"]
   s.files = ["README", "lib/embedit.rb", "lib/providers.yaml", "lib/embedit/media.rb", 
-             "lib/embedit/providers.rb", "lib/embedit/youtube", "lib/embedit/oembed"]
+             "lib/embedit/providers.rb", "lib/embedit/youtube.rb", "lib/embedit/oembed.rb"]
 end
