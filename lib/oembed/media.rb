@@ -41,11 +41,8 @@ module Oembed
     #find Oembed provider - set in ../providers.yaml
     def find_provider
       @sites.keys.each do |key|
-        unless @url.match(/#{key}/).nil?
+        if @url.match(/#{key}/)
           @base_url = prepare_url(@sites[key])
-        else
-          raise TypeError, "URL was not an Oembed provider"
-          #check_for_other_service
         end
       end
     end
