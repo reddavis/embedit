@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "embedit"
-  s.version = '0.0.2'
+  s.version = '0.0.3'
   s.date = Time.now.to_s
   s.summary = "Ruby interface for embedding anymedia"
   s.email = "reddavis@gmail.com"
@@ -8,5 +8,6 @@ Gem::Specification.new do |s|
   s.has_rdoc = false
   s.authors = ["Red Davis"]
   s.files = ["README", "lib/embedit.rb", "lib/providers.yaml", "lib/embedit/media.rb", 
-             "lib/embedit/providers.rb", "lib/embedit/youtube.rb", "lib/embedit/oembed.rb"]
+             "lib/embedit/providers.rb", "lib/embedit/youtube.rb", "lib/embedit/oembed.rb",
+             "lib/embedit/exceptions.rb"]
 end
