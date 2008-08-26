@@ -1,4 +1,4 @@
-module Oembed
+module Embedit
   class Providers
     
     attr_accessor :sites

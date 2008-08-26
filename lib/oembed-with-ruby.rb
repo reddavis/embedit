@@ -7,11 +7,13 @@ require 'yaml'
 #Files
 require 'oembed/providers'
 require 'oembed/media'
+require 'oembed/oembed'
+require 'oembed/youtube'
 
 
-#puts a = Oembed::Media.new('http://www.vimeo.com/1263763').html(:width => 800, :height => 100)
+puts a = Embedit::Media.new('http://www.vimeo.com/1263763').url
 
-#puts b = Oembed::Media.new('http://www.flickr.com/photos/davidgutierrez/2135724493/').html(:height => 200)
+puts b = Embedit::Media.new('http://www.flickr.com/photos/davidgutierrez/2135724493/').html(:height => 200)
 
 #puts c = Oembed::Media.new('http://www.viddler.com/explore/winelibrarytv/videos/142/').html(:height => 200, :width => 500)
 
@@ -20,3 +22,7 @@ require 'oembed/media'
 #puts e = Oembed::Media.new('http://pownce.com/dburka/notes/2951118/').html(:height => 200)
 
 #puts f = Oembed::Media.new('http://revision3.com/trs/blockoland/').html(:height => 500)
+
+#YouTUBE
+
+#puts g = Oembed::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA")
