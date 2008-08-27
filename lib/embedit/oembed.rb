@@ -25,10 +25,9 @@ module Embedit
       oembed_services = Providers.new.sites
       base_url = prepare_url(oembed_services[provider])
       url = URI.parse(base_url + @input_url)
-      http_get = Net::HTTP.get(url)
-      set_attributes(http_get)
+      puts 'he'
     end
-
+  
     def set_attributes(att)
       parsed_data = JSON.parse(att)
       @title = parsed_data['title']

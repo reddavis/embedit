@@ -11,6 +11,7 @@ require 'embedit/media'
 require 'embedit/oembed'
 require 'embedit/youtube'
 require 'embedit/exceptions'
+require 'embedit/validate'
 
 
 #puts a = Embedit::Media.new('http://www.vimeo.com/1263763').html
@@ -29,5 +30,4 @@ require 'embedit/exceptions'
 
 #puts g = Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA")
 
-#puts Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA").valid?
-
+puts Validate.new('http://www.youtube.com/watch?v=j3TOT1lnVTA').valid?
