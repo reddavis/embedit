@@ -14,7 +14,7 @@ require 'embedit/exceptions'
 require 'embedit/validate'
 
 
-puts a = Embedit::Media.new('http://www.vimeo.com/1263763').valid?
+#puts a = Embedit::Media.new('http://www.vimeo.com/1263763').valid?
 
 #puts b = Embedit::Media.new('http://www.flickr.com/photos/kentfield/2735062540/').valid? #.valid #.html(:height => 200)
 

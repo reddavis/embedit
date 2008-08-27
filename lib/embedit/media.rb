@@ -5,7 +5,7 @@ module Embedit
     attr_reader :title, :url, :format, :html
     
     def initialize(url)
-      @valid = true
+      @valid = true                                                 #Innocent until proven guilty
       @oembed_providers = Providers.new.sites 
       find_provider(url)
     end
@@ -27,7 +27,7 @@ module Embedit
     end
     
     def valid?
-      @valid         #Guilty until proven innocent
+      @valid    
     end
     
          
@@ -44,7 +44,6 @@ module Embedit
         return @media_data = YouTube.new(url)
       end
         @valid = false
-        #raise Embedit::BadUrl.new('URL is not recognised/supported')
     end
 
   end

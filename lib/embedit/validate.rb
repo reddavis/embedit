@@ -18,7 +18,7 @@ class Validate
   end
   
   def check_response
-    true if open(@url)
+    true if open(@url)    #Header codes are annoying, just check that the page works, the check with Embed::Media will narrow down more
     rescue 
       false
   end
