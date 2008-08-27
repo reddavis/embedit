@@ -14,11 +14,11 @@ require 'embedit/exceptions'
 require 'embedit/validate'
 
 
-#puts a = Embedit::Media.new('http://www.vimeo.com/1263763').html
+puts a = Embedit::Media.new('http://www.vimeo.com/1263763').valid?
 
-#puts b = Embedit::Media.new('http://www.flickr.com/photos/davidgutierrez/2135724493/').html(:height => 200)
+#puts b = Embedit::Media.new('http://www.flickr.com/photos/kentfield/2735062540/').valid? #.valid #.html(:height => 200)
 
-#puts c = Embedit::Media.new('http://www.viddler.com/explore/winelibrarytv/videos/142/').html(:height => 200, :width => 500)
+#puts c = Embedit::Media.new('http://www.viddler.com/explore/winelibrarytv/videos/14212300/').html(:height => 200, :width => 500)
 
 #puts d = Embedit::Media.new('http://qik.com/video/141977').html(:height => 50)
 
@@ -30,4 +30,5 @@ require 'embedit/validate'
 
 #puts g = Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA")
 
-puts Validate.new('http://www.youtube.com/watch?v=j3TOT1lnVTA').valid?
+#puts Validate.new('http://www.flickr.com/photos/kentfield/2735062540/').valid?
+

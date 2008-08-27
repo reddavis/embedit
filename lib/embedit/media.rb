@@ -2,9 +2,10 @@ module Embedit
   
   class Media
     
-    attr_accessor :title, :url, :format, :html
+    attr_reader :title, :url, :format, :html
     
     def initialize(url)
+      @valid = true
       @oembed_providers = Providers.new.sites 
       find_provider(url)
     end
@@ -25,20 +26,25 @@ module Embedit
       @media_data.url
     end
     
+    def valid?
+      @valid         #Guilty until proven innocent
+    end
+    
          
     private    
 
   #Find a provider
     def find_provider(url)
-      @oembed_providers.keys.each do |key|      #First search oembed providers for a match
-        if url.match(/(\.|\/)#{key}\./)         #URL can be www.vimeo.com || http://vimeo.com
+      @oembed_providers.keys.each do |key|                               #First search oembed providers for a match
+        if url.match(/(\.|\/)#{key}\./) && Validate.new(url).valid?      #URL can be www.vimeo.com || http://vimeo.com
           return @media_data = Oembed.new(url, key)
         end
       end
-      if url.match(/(\.|\/)youtube\./)                  #Next up is YouTube
+      if url.match(/(\.|\/)youtube\./) && Validate.new(url).valid?       #Next up is YouTube
         return @media_data = YouTube.new(url)
       end
-        raise Embedit::BadUrl.new('URL is not recognised/supported')
+        @valid = false
+        #raise Embedit::BadUrl.new('URL is not recognised/supported')
     end
 
   end

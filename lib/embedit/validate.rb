@@ -18,8 +18,7 @@ class Validate
   end
   
   def check_response
-    #Net::HTTP.get_response(URI.parse(@url)) == Net::HTTPSuccess ? true : false
-    true if open(@url)                                        #Net::HTTP.get_response does not work well at all with YouTube, Typical
+    true if open(@url)
     rescue 
       false
   end
@@ -33,7 +32,7 @@ class Validate
     end
     # Now we go through all services not linked with oEmbed
     if @url.match(/(\.|\/)youtube\./)                         #All youtube links should end with a .com (Please correct if I'm wrong) they get redirected to jp.youtube.com or whatever                      
-      return true
+      return true 
     end
     return false                                              #Return false if all else fail
   end
