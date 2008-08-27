@@ -10,9 +10,10 @@ require 'embedit/providers'
 require 'embedit/media'
 require 'embedit/oembed'
 require 'embedit/youtube'
+require 'embedit/exceptions'
 
 
-#puts a = Embedit::Media.new('http://www.vimeo.com/1263763').format
+#puts a = Embedit::Media.new('http://www.vimeo.com/1263763').html
 
 #puts b = Embedit::Media.new('http://www.flickr.com/photos/davidgutierrez/2135724493/').html(:height => 200)
 
@@ -28,4 +29,5 @@ require 'embedit/youtube'
 
 #puts g = Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA")
 
-#puts Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA")
+#puts Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA").valid?
+

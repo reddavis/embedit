@@ -24,19 +24,21 @@ module Embedit
     def url
       @media_data.url
     end
-     
+    
+         
     private    
 
   #Find a provider
     def find_provider(url)
       @oembed_providers.keys.each do |key|      #First search oembed providers for a match
-        if url.match(/#{key}/)
-          return @media_data = Oembed.new(url)
+        if url.match(/(\.|\/)#{key}\./)         #URL can be www.vimeo.com || http://vimeo.com
+          return @media_data = Oembed.new(url, key)
         end
       end
-      if url.match(/youtube/)                  #Next up is YouTube
+      if url.match(/(\.|\/)youtube\./)                  #Next up is YouTube
         return @media_data = YouTube.new(url)
       end
+        raise Embedit::BadUrl.new('URL is not recognised/supported')
     end
 
   end

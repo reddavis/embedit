@@ -4,10 +4,9 @@ module Embedit
     
     attr_reader :title, :url, :format, :html
     
-    def initialize(url)
+    def initialize(url, provider)
       @input_url = url
-      @sites = Providers.new.sites 
-      get_info
+      get_info(provider)
     end
 
     def html(size = {})
@@ -22,9 +21,10 @@ module Embedit
     end
         
     private    
-    def get_info
-      find_provider
-      url = URI.parse(@base_url + @input_url)
+    def get_info(provider)
+      oembed_services = Providers.new.sites
+      base_url = prepare_url(oembed_services[provider])
+      url = URI.parse(base_url + @input_url)
       http_get = Net::HTTP.get(url)
       set_attributes(http_get)
     end
@@ -36,24 +36,14 @@ module Embedit
       @format = parsed_data['type']
       @html = @format == 'video' ? parsed_data['html'] : %{<img src='#{@url}' alt='#{@title}'>}
     end
-    
-    #find Oembed provider - set in ../providers.yaml
-    def find_provider
-      @sites.keys.each do |key|
-        if @input_url.match(/#{key}/)
-          @base_url = prepare_url(@sites[key])
-          break
-        end
-      end
-    end
-    
+        
     #some urls contain format in the middle of the url
     def prepare_url(url)
       if url.match(/format/)
-        @base_url = "#{url.gsub(/\{format\}/, 'json')}" + '?url='
+        return "#{url.gsub(/\{format\}/, 'json')}" + '?url='
       else
         @input_url = @input_url + '&format=json'
-        @base_url = url + '?url='
+        return url + '?url='
       end
     end    
   end
