@@ -47,3 +47,21 @@ describe "Flickr oEmbed tests" do
   end
   
 end
+
+describe "Viddler oEmbed tests" do
+  it "should properly validate a valid Viddler url" do
+    media = Embedit::Media.new('http://www.viddler.com/explore/winelibrarytv/videos/635/').valid?
+    media.should == true
+  end
+  
+  it "should properly validate an invalid (with only numbers) Viddler url" do
+    media = Embedit::Media.new('http://www.viddler.com/explore/winelibrarytv/videos/635222/').valid?
+    media.should == false
+  end
+  
+end
+
+
+
+
+

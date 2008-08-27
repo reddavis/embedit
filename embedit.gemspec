@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "embedit"
-  s.version = '0.0.3'
+  s.version = '0.0.4'
   s.date = Time.now.to_s
   s.summary = "Ruby interface for embedding any media"
   s.email = "reddavis@gmail.com"
