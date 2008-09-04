@@ -17,6 +17,12 @@ At the time of writing, you now have the ability to call:
 	media.url => The url to the media
 	media.html => The embed code, whether this is a generic flash player, a company player (Vimeo, Youtube), image tag and more to come
 	
-You also specify media sizes => media.html(:width => 200, :height => 700)
+  You also specify media sizes => media.html(:width => 200, :height => 700)
+  
+  You can also validate an url (useful for a active record (or whatever you use) validation)
+  media.valid? => Returns true or false
 	
-At the moment Embedit supports the oEmbed family (http://www.oembed.com/) and YouTube.
+At the moment Embedit supports: 
+  - oEmbed family (http://www.oembed.com/) 
+  - YouTube (http://youtube.com)
+  - OVI (http://share.ovi.com/)

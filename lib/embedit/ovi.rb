@@ -26,7 +26,7 @@ module Embedit
     def work_out_html(page)
       @html = page.search("tr#M_sidebar_uimediaembed_uifp1 td input").first.attributes['value'] rescue nil  #We first search for video or audio, if not its got to be image (hopfully)
       if @html.nil?
-        @html = page.search("div#M_sidebar_uimediaembed_uiip td input#M_sidebar_uimediaembed_uihtml2").first.attributes['value']
+        @html = page.search("div#M_sidebar_uimediaembed_uiip td input#M_sidebar_uimediaembed_uihtml2").first.attributes['value'].gsub(/<a \S+>/, '').gsub(/<\/a>/, '')  #Follow Embedit convention, images should not be surrounded a a <a href></a>
       end
     end
     

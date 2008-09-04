@@ -17,7 +17,7 @@ require 'embedit/validate'
 
 #puts a = Embedit::Media.new('http://www.vimeo.com/1263763').html
 
-#puts b = Embedit::Media.new('http://www.flickr.com/photos/reddavis999/2692043113/').format #valid? #.valid #.html(:height => 200)
+#puts b = Embedit::Media.new('http://www.flickr.com/photos/reddavis999/2692043113/').html #valid? #.valid #.html(:height => 200)
 
 #puts c = Embedit::Media.new('http://www.viddler.com/explore/winelibrarytv/videos/147/').format #html(:height => 200, :width => 500)
 
@@ -35,7 +35,7 @@ require 'embedit/validate'
 
 #OVI
 
-#puts a = Embedit::Media.new('http://share.ovi.com/media/ekki808.mu-sick/ekki808.10001').html(:height => 900, :width => 100)
+#puts a = Embedit::Media.new('http://share.ovi.com/media/james___.public/james___.10016').html(:height => 900, :width => 100)
 
 #puts b = Embedit::Media.new('http://share.ovi.com/media/DefragTV.public/DefragTV.10014').html#(:height => 900, :width => 100)
 
