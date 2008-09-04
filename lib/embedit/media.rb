@@ -8,8 +8,8 @@ module Embedit
       @valid = true                                                 #Innocent until proven guilty
       @oembed_providers = Providers.new.sites 
       find_provider(url)
-      #rescue                                                        #Horrible hack, but flickrs poor status headers == :( 
-      #  @valid = false                                              #if it breaks, its gotta be invalid, I suggest removing when debugging                                                 
+      rescue                                                        #Horrible hack, but flickrs poor status headers == :( 
+        @valid = false                                              #if it breaks, its gotta be invalid, I suggest removing when debugging                                                 
     end
     
     def title

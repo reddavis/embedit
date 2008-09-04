@@ -40,17 +40,3 @@ module Embedit
     
   end
 end
-
-#audio
-#<embed src="http://share.ovi.com/flash/audioplayer.aspx?media=ekki808.10001&channelname=ekki808.mu-sick" width="145" height="60" type="application/x-shockwave-flash"></embed>
-
-#video
-#<embed src="http://share.ovi.com/flash/player.aspx?media=DefragTV.10014&channelname=DefragTV.public" width="512" height="420" type="application/x-shockwave-flash"></embed>
-
-#image
-#<a href="http://share.ovi.com/media/james___.public/james___.10016"><img src="http://media.share.ovi.com/m1/medium/0233/ffe7143e402341d48ad5440715ecafa6.jpg" border="0" title="Tom Arnold at Westbury - Share on Ovi" alt="Tom Arnold at Westbury - Share on Ovi" width="256" height="144" /></a>
-
-#<embed src="http://share.ovi.com/flash/player.aspx?media=DefragTV.10014&channelname=DefragTV.public" width="512" height="420" 
-      #type="application/x-shockwave-flash"></embed>
-      
-#http://share.ovi.com/media/DefragTV.public/DefragTV.10014
