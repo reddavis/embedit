@@ -33,6 +33,8 @@ class Validate
     # Now we go through all services not linked with oEmbed
     if @url.match(/(\.|\/)youtube\./)                         #All youtube links should end with a .com (Please correct if I'm wrong) they get redirected to jp.youtube.com or whatever                      
       return true 
+    elsif @url.match(/share\.ovi\.com/)
+      return true
     end
     return false                                              #Return false if all else fail
   end
