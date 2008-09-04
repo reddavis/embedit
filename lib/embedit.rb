@@ -29,7 +29,7 @@ require 'embedit/validate'
 
 #YouTUBE
 
-#puts g = Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA")
+#puts g = Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA").title
 
 #puts Validate.new('http://www.flickr.com/photos/kentfield/2735062540/').valid?
 
