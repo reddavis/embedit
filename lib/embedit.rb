@@ -35,4 +35,4 @@ require 'embedit/validate'
 
 #OVI
 
-puts a = Embedit::Media.new('http://share.ovi.com/media/ekki808.mu-sick/ekki808.10001').title
+puts a = Embedit::Media.new('http://share.ovi.com/media/james___.public/james___.10016').title
