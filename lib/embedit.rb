@@ -13,6 +13,7 @@ require 'embedit/youtube'
 require 'embedit/ovi'
 require 'embedit/exceptions'
 require 'embedit/validate'
+require 'embedit/player/player'
 
 
 #puts a = Embedit::Media.new('http://www.vimeo.com/1263763').html
@@ -40,3 +41,7 @@ require 'embedit/validate'
 #puts b = Embedit::Media.new('http://share.ovi.com/media/DefragTV.public/DefragTV.10014').html#(:height => 900, :width => 100)
 
 #puts c = Embedit::Media.new('http://share.ovi.com/media/james___.public/james___.10016').html(:height => 900, :width => 100)
+
+# Flash Player
+
+puts a = Embedit::Media.new('../video.flv').url

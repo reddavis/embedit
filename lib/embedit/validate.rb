@@ -35,6 +35,8 @@ class Validate
       return true 
     elsif @url.match(/share\.ovi\.com/)
       return true
+    elsif File.extname(@url).match(/\.flv/)
+      return true
     end
     return false                                              #Return false if all else fail
   end

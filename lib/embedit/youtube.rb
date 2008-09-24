@@ -22,7 +22,7 @@ module Embedit
         <object width="425" height="350">
           <param name="movie" value="http://www.youtube.com/v/#{video_id}"></param>
           <param name="wmode" value="transparent"></param>
-          <embed src="http://www.youtube.com/v/#{video_id}&ap=%2526fmt%3D18" 
+          <embed src="http://www.youtube.com/v/#{video_id}" 
             type="application/x-shockwave-flash" wmode="transparent" 
             width="425" height="350">
           </embed>

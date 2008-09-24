@@ -17,7 +17,7 @@ module Embedit
     end
     
     def html(size = {})
-      @media_data.html(size)
+      @media_data.html
     end
     
     def format
@@ -48,6 +48,8 @@ module Embedit
         return @media_data = YouTube.new(url)
       elsif url.match(/share\.ovi\.com/)
         return @media_data = Ovi.new(url)
+      elsif File.extname(url) != "" || nil
+        return @media_data = Player.new(url)
       end
         @valid = false
     end
