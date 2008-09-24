@@ -29,13 +29,13 @@ require 'embedit/validate'
 
 #YouTUBE
 
-#puts g = Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA").title
+#puts g = Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA").html
 
 #puts Validate.new('http://www.flickr.com/photos/kentfield/2735062540/').valid?
 
 #OVI
 
-#puts a = Embedit::Media.new('http://share.ovi.com/media/james___.public/james___.10016').html(:height => 900, :width => 100)
+#puts a = Embedit::Media.new('http://share.ovi.com/media/PangeaDay.TEDTalks/PangeaDay.10054').html(:height => 900, :width => 100)
 
 #puts b = Embedit::Media.new('http://share.ovi.com/media/DefragTV.public/DefragTV.10014').html#(:height => 900, :width => 100)
 
