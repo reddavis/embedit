@@ -10,7 +10,6 @@ module Embedit
     
     def initialize(url)
       self.url = url
-      self.html = @url
     end
     
     def url=(path)
@@ -18,6 +17,9 @@ module Embedit
     end
     
     def html(size = {})
+      self.html = @url  # Reset measurements, incase if hmtl is called twice on the same object
+      @html.gsub!(/400/, size[:width].to_s) unless size[:width].nil?
+      @html.gsub!(/300/, size[:height].to_s) unless size[:height].nil?
       @html
     end
     

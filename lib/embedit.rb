@@ -8,13 +8,14 @@ require 'yaml'
 #Files
 require 'embedit/providers'
 require 'embedit/media'
-require 'embedit/oembed'
-require 'embedit/youtube'
-require 'embedit/ovi'
+require 'embedit/oembed/oembed'
+require 'embedit/youtube/youtube'
+require 'embedit/ovi/ovi'
 require 'embedit/exceptions'
 require 'embedit/validate'
 require 'embedit/player/player'
 
+# Oembed
 
 #puts a = Embedit::Media.new('http://www.vimeo.com/1263763').html
 
@@ -28,13 +29,11 @@ require 'embedit/player/player'
 
 #puts f = Embedit::Media.new('http://revision3.com/trs/blockoland/').html(:height => 500)
 
-#YouTUBE
+# YouTUBE
 
-#puts g = Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA").html
+#puts g = Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA").valid?
 
-#puts Validate.new('http://www.flickr.com/photos/kentfield/2735062540/').valid?
-
-#OVI
+# OVI
 
 #puts a = Embedit::Media.new('http://share.ovi.com/media/PangeaDay.TEDTalks/PangeaDay.10054').html(:height => 900, :width => 100)
 
@@ -44,4 +43,4 @@ require 'embedit/player/player'
 
 # Flash Player
 
-puts a = Embedit::Media.new('../video.flv').url
+#puts a = Embedit::Media.new('../video.flv').html(:height => 900)

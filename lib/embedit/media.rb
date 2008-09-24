@@ -17,7 +17,7 @@ module Embedit
     end
     
     def html(size = {})
-      @media_data.html
+      @media_data.html(size)
     end
     
     def format
