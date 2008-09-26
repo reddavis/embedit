@@ -9,13 +9,9 @@ module Embedit
     attr_reader :title, :url, :format
     
     def initialize(url)
-      self.url = url
+      @url = url
     end
-    
-    def url=(path)
-      @url = File.expand_path(path)
-    end
-    
+        
     def html(size = {})
       self.html = @url  # Reset measurements, incase if hmtl is called twice on the same object
       @html.gsub!(/400/, size[:width].to_s) unless size[:width].nil?
