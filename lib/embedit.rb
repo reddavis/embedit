@@ -31,7 +31,7 @@ require 'embedit/player/player'
 
 # YouTUBE
 
-#puts g = Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA").valid?
+#puts g = Embedit::Media.new("http://www.youtube.com/watch?v=j3TOT1lnVTA").html
 
 # OVI
 
@@ -43,4 +43,4 @@ require 'embedit/player/player'
 
 # Flash Player
 
-#puts a = Embedit::Media.new('../video.flv').html(:height => 900)
+#puts a = Embedit::Media.new('../test.flv').html(:height => 900)

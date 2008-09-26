@@ -10,6 +10,8 @@ Gem::Specification.new do |s|
   s.files = ["README", "lib/embedit.rb", "lib/providers.yaml", "lib/embedit/media.rb", 
              "lib/embedit/oembed/providers.rb", "lib/embedit/youtube/youtube.rb", "lib/embedit/oembed/oembed.rb",
              "lib/embedit/exceptions.rb", "lib/embedit/validate.rb", "lib/embedit/ovi/ovi.rb",
+             "lib/embedit/player/player.rb",
+             "lib/player/player.swf", "lib/player/swfobject.js",
              "spec/spec_helper.rb", "spec/oembed_spec.rb", "spec/youtube_spec.rb", 
              "spec/ovi_spec.rb", "spec/player_spec.rb"]
 end
