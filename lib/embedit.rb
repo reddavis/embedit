@@ -13,7 +13,7 @@ require 'embedit/youtube/youtube'
 require 'embedit/ovi/ovi'
 require 'embedit/exceptions'
 require 'embedit/validate'
-require 'player/player'
+require 'embedit/player/player'
 
 # Oembed
 
