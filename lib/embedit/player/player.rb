@@ -2,8 +2,8 @@ module Embedit
   
   class Player
     
-    FLASH_PLAYER = File.expand_path('..', __FILE__) + '/../../player/player.swf'
-    SWF_OBJECT = File.expand_path('..', __FILE__) + '/../../player/swfobject.js'
+    FLASH_PLAYER = File.expand_path('../../../player/swfobject.js', __FILE__)
+    SWF_OBJECT = File.expand_path('../../../player/swfobject.js', __FILE__)
 #    MEDIA_PATH = File.dirname(__FILE__) + '/../../'
     
     attr_reader :title, :url, :format
