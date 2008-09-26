@@ -14,7 +14,7 @@ module Embedit
     end
     
     def load_providers
-      providers = YAML.load_file("#{File.dirname(__FILE__)}/../providers.yaml")
+      providers = YAML.load_file("#{File.dirname(__FILE__)}/../../providers.yaml")
       providers.each {|d| @sites.merge!(d[0] => d[1])}
     end
   end

@@ -6,7 +6,7 @@ require 'open-uri'
 require 'yaml'
 
 #Files
-require 'embedit/providers'
+require 'embedit/oembed/providers'
 require 'embedit/media'
 require 'embedit/oembed/oembed'
 require 'embedit/youtube/youtube'
