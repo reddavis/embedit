@@ -26,3 +26,10 @@ At the moment Embedit supports:
   - oEmbed family (http://www.oembed.com/) 
   - YouTube (http://youtube.com)
   - OVI (http://share.ovi.com/)
+  - Local files, I've had some problems with Rails (files not found), but using http://pandastream.com it works perfectly fine
+  
+Sites To Support:
+  - Facebook
+  - Image shack
+  - Screen shot of a website (user puts in url, if nothing matches take screen shot)
+  - Email me any other suggestions with links to the site at reddavis [[+@+]] gmail *.* com
