@@ -12,14 +12,14 @@ class Validate
   private
   
   def check_url    
-    if check_url_supported == true && check_response == true   #We first check that the url is one actually supported by Embedit
+    if (check_url_supported == true && check_response == true) || (File.extname(@url) != "" || nil && check_url_supported)    #We first check that the url is one actually supported by Embedit
       return true
     end
   end
   
   def check_response
     true if open(@url)    #Header codes are annoying, just check that the page works, the check with Embed::Media will narrow down more
-    rescue 
+    rescue
       false
   end
   
@@ -35,7 +35,7 @@ class Validate
       return true 
     elsif @url.match(/share\.ovi\.com/)
       return true
-    elsif File.extname(@url).match(/\.flv/)
+    elsif File.extname(@url) != "" || nil
       return true
     end
     return false                                              #Return false if all else fail

@@ -6,10 +6,10 @@ module Embedit
     
     def initialize(url)
       @valid = true                                                 #Innocent until proven guilty
-      @oembed_providers = Providers.new.sites 
+      @oembed_providers = Providers.new.sites
       find_provider(url)
-      rescue                                                        #Horrible hack, but flickrs poor status headers == :( 
-        @valid = false                                              #if it breaks, its gotta be invalid, I suggest removing when debugging                                                 
+      #rescue                                                        #Horrible hack, but flickrs poor status headers == :( 
+      #  @valid = false                                              #if it breaks, its gotta be invalid, I suggest removing when debugging                                                 
     end
     
     def title
@@ -38,7 +38,7 @@ module Embedit
   #Find a provider
     def find_provider(url)
       return @valid = false unless Validate.new(url).valid?
-      
+
       @oembed_providers.keys.each do |key|                               #First search oembed providers for a match
         if url.match(/(\.|\/)#{key}\./)                                  #URL can be www.vimeo.com || http://vimeo.com
           return @media_data = Oembed.new(url, key)

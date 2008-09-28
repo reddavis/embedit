@@ -1,17 +1,14 @@
+# TODO Having problems with using in rails (files not being found), need to look into. But works perfectly find with www.pandastream.com
 module Embedit
   
   class Player
-    
-    FLASH_PLAYER = File.expand_path('../../../player/swfobject.js', __FILE__)
-    SWF_OBJECT = File.expand_path('../../../player/swfobject.js', __FILE__)
-#    MEDIA_PATH = File.dirname(__FILE__) + '/../../'
-    
+  
     attr_reader :title, :url, :format
     
     def initialize(url)
       @url = url
     end
-        
+            
     def html(size = {})
       self.html = @url  # Reset measurements, incase if hmtl is called twice on the same object
       @html.gsub!(/400/, size[:width].to_s) unless size[:width].nil?
@@ -20,17 +17,9 @@ module Embedit
     end
     
     def html=(url)
-      @html = %{
-        <div id='preview'></div>
-        <script type='text/javascript' src='#{SWF_OBJECT}'></script>
-        <script type='text/javascript'>
-        var s1 = new SWFObject('#{FLASH_PLAYER}','player','400','300','9');
-        s1.addParam('allowfullscreen','true');
-        s1.addParam('allowscriptaccess','always');
-        s1.addParam('flashvars','file=#{url}');
-        s1.write('preview');
-        </script>
-        }
+      @html = %(<embed src="http://s3.amazonaws.com/panda-test/player.swf" width="400" height="300" 
+      allowfullscreen="true" allowscriptaccess="always" 
+      flashvars="&displayheight=300&file=#{url}&width=400&height=300" />)
     end
     
   end

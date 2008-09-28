@@ -16,8 +16,7 @@ require 'embedit/validate'
 require 'embedit/player/player'
 
 # Oembed
-
-#puts a = Embedit::Media.new('http://www.vimeo.com/1263763').html
+#puts a = Embedit::Media.new('http://www.vimeo.com/1260077').title
 
 #puts b = Embedit::Media.new('http://www.flickr.com/photos/reddavis999/2692043113/').html #valid? #.valid #.html(:height => 200)
 
@@ -43,4 +42,6 @@ require 'embedit/player/player'
 
 # Flash Player
 
-#puts a = Embedit::Media.new('../test.flv').html(:height => 900)
+#puts a = Embedit::Media.new('../test.flv').html
+
+#puts File.exists?(File.expand_path('test.flv'))
