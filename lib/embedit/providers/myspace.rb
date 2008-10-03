@@ -15,7 +15,7 @@ module Embedit
     
     def html(size = {})
       attributes = size.collect {|k,v| "#{k}=\"#{v}\" "}.join(" ")
-      puts src = page.at("img#userImage").to_s.slice(/src=.+\.\w+/)
+      src = page.at("img#userImage").to_s.scan(/src=(.+\.\w+)/).to_s
       %{
         <a href="#{@url}"><img src="#{src}" #{attributes}/></a>
       }
