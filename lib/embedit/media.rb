@@ -2,56 +2,41 @@ module Embedit
   
   class Media
     
-    attr_reader :title, :url, :format, :html
+    attr_accessor :title, :url, :format, :html, :provider
+    
+    
+    #delegate :title, :html, :format, :to => :provider
     
     def initialize(url)
-      @valid = true                                                 #Innocent until proven guilty
-      @oembed_providers = Providers.new.sites
-      find_provider(url)
-      rescue                                                        #Horrible hack, but flickrs poor status headers == :( 
-        @valid = false                                              #if it breaks, its gotta be invalid, I suggest removing when debugging                                                 
+      @valid    = true
+      @url      = url
+      @provider = Provider.find(url)
+      # The validation does a expensive GET request. needs to be fixed. (request only the headers?!) 
+      if !@provider || !Validate.new(@url).valid?
+        @valid = false
+        return
+      end 
+
+    rescue #Horrible hack, but flickrs poor status headers == :( 
+      @valid = false #if it breaks, its gotta be invalid, I suggest removing when debugging                                                 
     end
     
     def title
-      @media_data.title
+      self.provider.title if self.provider
     end
     
-    def html(size = {})
-      @media_data.html(size)
+    def html(args={})
+      args = {} if args.nil?
+      self.provider.html(args) if self.provider    
     end
     
     def format
-      @media_data.format
-    end
-    
-    def url
-      @media_data.url
+      self.provider.format if self.provider
     end
     
     def valid?
       @valid    
     end
     
-         
-    private    
-
-  #Find a provider
-    def find_provider(url)
-      return @valid = false unless Validate.new(url).valid?
-
-      @oembed_providers.keys.each do |key|                               #First search oembed providers for a match
-        if url.match(/(\.|\/)#{key}\./)                                  #URL can be www.vimeo.com || http://vimeo.com
-          return @media_data = Oembed.new(url, key)
-        end
-      end
-      if url.match(/(\.|\/)youtube\./)                                  #Next up is YouTube
-        return @media_data = YouTube.new(url)
-      elsif url.match(/share\.ovi\.com/)
-        return @media_data = Ovi.new(url)
-      elsif File.extname(url) != "" || nil
-        return @media_data = Player.new(url)
-      end
-        @valid = false
-    end
   end
 end

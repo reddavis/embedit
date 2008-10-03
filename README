@@ -5,6 +5,8 @@ Embedit is an embedding tool written in Ruby.
 
 We are currently re-writing dothegreenthing.com and allow users to add media from pretty much anywhere. Handling all the different embed codes/api's validations and everything else that comes with this functionality can be/is a pain.
 
+Embedit is the backbone to the web service http://embedit.me. Embedit.me also has its only ruby lib over at http://github.com/reddavis/embedit_ruby/tree/master
+
 Embedit is extremely simple to use. You have the url? Just plonk it in here =>
 
 media = Embedit::Media.new('here')
@@ -26,10 +28,20 @@ At the moment Embedit supports:
   - oEmbed family (http://www.oembed.com/) 
   - YouTube (http://youtube.com)
   - OVI (http://share.ovi.com/)
-  - Local files, I've had some problems with Rails (files not found), but using http://pandastream.com it works perfectly fine
+  - Google Video
+  - Sevenload Video
+  - .[jpg|gif|png] URL
+  - Twitter (twictur.es)
+  - Myspace Images
+  - FLV video stored where ever
   
 Sites To Support:
   - Facebook
   - Image shack
   - Screen shot of a website (user puts in url, if nothing matches take screen shot)
   - Email me any other suggestions with links to the site at reddavis [[+@+]] gmail *.* com
+  
+  Credits:
+
+  Red Davis (http://redwriteshere.com/) (http://github.com/reddavis/embedit/tree/master)
+  Michael Bumann - railslove.com

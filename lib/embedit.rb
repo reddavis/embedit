@@ -3,20 +3,21 @@ require 'json'
 require 'rexml/document'
 require 'net/http'
 require 'open-uri'
+require 'hpricot'
 require 'yaml'
 
 #Files
-require 'embedit/oembed/providers'
+require 'embedit/provider'
 require 'embedit/media'
-require 'embedit/oembed/oembed'
-require 'embedit/youtube/youtube'
-require 'embedit/ovi/ovi'
 require 'embedit/exceptions'
 require 'embedit/validate'
-require 'embedit/player/player'
+
+module Embedit
+end
 
 # Oembed
-#puts a = Embedit::Media.new('http://www.vimeo.com/1260077').title
+
+#puts a = Embedit::Media.new('http://www.vimeo.com/1263763').html
 
 #puts b = Embedit::Media.new('http://www.flickr.com/photos/reddavis999/2692043113/').html #valid? #.valid #.html(:height => 200)
 
@@ -42,6 +43,8 @@ require 'embedit/player/player'
 
 # Flash Player
 
-#puts a = Embedit::Media.new('../test.flv').html
+#puts a = Embedit::Media.new('http://twitter.com/kastner/statuses/939873832').html
 
-#puts File.exists?(File.expand_path('test.flv'))
+# MySpace Pictures
+
+#puts a = Embedit::Media.new('http://viewmorepics.myspace.com/index.cfm?fuseaction=viewImage&friendID=152417109&albumID=0&imageID=8797852').html(:height => 20)
