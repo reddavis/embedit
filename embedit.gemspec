@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{embedit}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.authors = ["Red Davis", "Michael Bumann"]
   s.date = Time.now.to_s
