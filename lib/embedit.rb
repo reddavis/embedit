@@ -45,6 +45,18 @@ end
 
 #puts a = Embedit::Media.new('http://twitter.com/kastner/statuses/939873832').html
 
+# Seven Load
+
+#puts a = Embedit::Media.new('http://en.sevenload.com/videos/3uxhIev-Funny-animal-clips').html
+
 # MySpace Pictures
 
 #puts a = Embedit::Media.new('http://viewmorepics.myspace.com/index.cfm?fuseaction=viewImage&friendID=152417109&albumID=0&imageID=8797852').html(:height => 20)
+
+# College Humor
+
+#puts a = Embedit::Media.new('http://www.collegehumor.com/picture:1832904').html
+
+# Google Video
+
+#puts a = Embedit::Media.new('http://video.google.com/videoplay?docid=-1944827568401901581&hl=en').title

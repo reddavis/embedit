@@ -13,11 +13,7 @@ module Embedit
     def html(options = {})
       options.reverse_merge!({:width=>445,:height=>364})
       %{
-        <object type="application/x-shockwave-flash" data="http://#{lang}.sevenload.com/pl/#{video_id}/#{options[:width]}x#{options[:height]}/swf" width="#{options[:width]}" height="#{options[:height]}">
-          <param name="allowFullscreen" value="true" />
-          <param name="allowScriptAccess" value="always" />
-          <param name="movie" value="http://#{lang}.sevenload.com/pl/#{video_id}/#{options[:width]}x#{options[:height]}/swf" />
-        </object>
+        <script type="text/javascript" src="http://#{lang}.sevenload.com/pl/#{video_id}/#{options[:width]}x#{options[:height]}"></script>
       }
     end
     
@@ -45,3 +41,11 @@ module Embedit
   end
 
 end
+
+
+
+#<object type="application/x-shockwave-flash" data="http://#{lang}.sevenload.com/pl/#{video_id}/#{options[:width]}x#{options[:height]}/swf" width="#{options[:width]}" height="#{options[:height]}">
+#  <param name="allowFullscreen" value="true" />
+#  <param name="allowScriptAccess" value="always" />
+#  <param name="movie" value="http://#{lang}.sevenload.com/pl/#{video_id}/#{options[:width]}x#{options[:height]}/swf" />
+#</object>

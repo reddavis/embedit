@@ -11,11 +11,11 @@ module Embedit
     
     def html(options={})
       options.reverse_merge!(:width=>400, :height=>326)
-      %{<embed id="VideoPlayback" src="http://video.google.com/googleplayer.swf?docid=#{doc_id}&hl=en&fs=true" style="width:#{options[:width]}px;height:#{options[:height]}px" allowFullScreen="true" allowScriptAccess="always" type="application/x-shockwave-flash"> </embed>}
+      %{<embed id="VideoPlayback" src="http://video.google.com/googleplayer.swf?docid=-#{doc_id}&hl=en&fs=true" style="width:#{options[:width]}px;height:#{options[:height]}px" allowFullScreen="true" allowScriptAccess="always" type="application/x-shockwave-flash"> </embed>}
     end
     
     def doc_id
-      @url[/video\.google\.com\/videoplay\?docid=(\w+)/,1]
+      @url[/video\.google\.com\/videoplay\?docid=-(\w+)/,1]
     end
     
     def title
@@ -25,7 +25,7 @@ module Embedit
     end
     
     def self.match(url)
-      url.match(/video\.google\.com\/videoplay\?docid=(\w+)/)
+      url.match(/video\.google\.com\/videoplay\?docid=-(\w+)/)
     end
   end
 
