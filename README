@@ -1,3 +1,18 @@
+**** NOTE ****
+
+This gem has been turned into a web service (mainly so that people using other languages can use it). The service can be found over at http://embedit.me
+
+I have written a wrapper for Embedit (in Ruby) available here...
+
+http://github.com/reddavis/embedit_ruby/tree/master
+
+This will be a gem as soon as Github have fixed my little problem (http://support.github.com/discussions/gems/1-gem-tick-box-wont-stay-ticked)
+
+Cheers, Red
+
+**********************************************
+
+
 Embedit
 -------
 
